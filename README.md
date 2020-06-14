@@ -17,7 +17,18 @@ $ solcjs --bin TexaResultStorage.sol
 ```
 This will generate 2 files in the PWD.
 
-3. Generate the `store.go` file using abigen
+3. Install abigen and generate the `store.go` file using the abigen command
+
+First, let us install the abigen:
+
+```sh
+$ go get -u github.com/ethereum/go-ethereum
+$ cd $GOPATH/src/github.com/ethereum/go-ethereum/
+$ make
+$ make devtools
+```
+
+Now, let us use the abigen command to generate the `store.go` file:
 
 ```sh
 $ abigen --bin=TexaResultStorage_sol_TexaResultStorage.bin --abi=TexaResultStorage_sol_TexaResultStorage.abi --pkg=store --out=store.go
